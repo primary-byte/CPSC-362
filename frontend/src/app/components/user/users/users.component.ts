@@ -1,8 +1,14 @@
+import { AllBlogEntriesComponent } from './../../blog-entry/all-blog-entries/all-blog-entries.component';
 import { Component, OnInit } from '@angular/core';
 import { UserData, UserService } from 'src/app/services/user-service/user.service';
 import { map, tap } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, ActivatedRoute } from '@angular/router';
+import { BlogService } from 'src/app/services/blog-service/blog.service';
+import { BlogEntriesPageable } from 'src/app/model/blog-entry.interface';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication-service/authentication.service';
+
 
 @Component({
   selector: 'app-users',
@@ -15,9 +21,23 @@ export class UsersComponent implements OnInit {
   dataSource: UserData = null;
   pageEvent: PageEvent;
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'role'];
+  blogEntries$: Observable<BlogEntriesPageable> = this.blogService.indexAll(1, 10);
 
-  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private blogService: BlogService, private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthenticationService) { }
+ 
 
+
+  onPaginateChange(event: PageEvent) {
+    this.blogEntries$ = this.blogService.indexAll(event.pageIndex, event.pageSize);
+  }
+
+  navigateTo(value) {
+    this.router.navigate(['../', value]);
+  }
+
+  logout() {
+    this.authService.logout();
+  }
   ngOnInit(): void {
     this.initDataSource();
   }
@@ -28,7 +48,7 @@ export class UsersComponent implements OnInit {
     ).subscribe();
   }
 
-  onPaginateChange(event: PageEvent) {
+  /*onPaginateChange(event: PageEvent) {
     let page = event.pageIndex;
     let size = event.pageSize;
 
@@ -44,7 +64,7 @@ export class UsersComponent implements OnInit {
       ).subscribe()
     }
 
-  }
+  }*/
 
   findByName(username: string) {
     console.log(username);
