@@ -7,11 +7,12 @@ mat-toolbar {
   z-index: 5;
 }
 mat-toolbar-row {
+  height: 96px;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 0 40px;
+  padding: 10px 40px;
 }
 .baseball {
   width: 30%;
