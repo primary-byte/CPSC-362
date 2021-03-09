@@ -7,5 +7,65 @@
 }
 
 .container > * {
-    width: 40%;
+    width: 75%;
+}
+
+//  Nathan's code
+*, **, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    display: grid;
+    margin: 0px;
+    grid-template-rows: auto 1fr auto;
+    background-image: linear-gradient(180deg, #525f7f 40%, #f8f9fe 80%);
+}
+main {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_box {
+    justify-content: center;
+    text-align: right;
+    background: white;
+    height: 500px;
+    width: 400px;
+    border-radius: 5%;
+}
+form {
+    height:auto;
+    width: auto;
+    text-align: left;
+    padding: 30px 0;
+}
+input {
+    height: 2rem;
+}
+footer {
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.plain {
+    text-decoration: none;
+}
+h4 {
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
 }
