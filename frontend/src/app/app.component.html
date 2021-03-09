@@ -1,11 +1,12 @@
 <mat-toolbar color="#5e72e4">
   <mat-toolbar-row>
     <span routerLink="/home" class="home-link">Home</span>
-    <span class="example-spacer"></span>
-    <button mat-flat-button routerLink="users">Search</button>
-    <button mat-flat-button style="margin-left: 20px;" routerLink="create-blog-entry">Create Post</button>
-    <button mat-flat-button style="margin-left: 20px;" (click)="navigateTo('update-profile')">Your account</button>
-    <mat-form-field style="margin-left: 20px;" name="loginRegisterDropdown">
+    <div class = "baseball">
+      <button mat-flat-button routerLink="users">Search</button>
+      <button mat-flat-button routerLink="create-blog-entry">Create Post</button>
+      <button mat-flat-button (click)="navigateTo('update-profile')">Your account</button>
+    </div>
+    <mat-form-field name="loginRegisterDropdown">
       <mat-select placeholder="Login">
         <mat-option (click)="navigateTo('login')">Login</mat-option>
         <mat-option (click)="navigateTo('register')">Register</mat-option>
