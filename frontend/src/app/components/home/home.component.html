@@ -1,4 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://TheDocs.com/">
+        <meta property="og:site_name" content="TheDocs">
+        <meta property="og:keywords" content="TheDocs, CSUF, CSUF chat, CSUF learning, CSUF tutorials">
+        <!-- End of meta section-->
+        <title>TheDocs | Homepage</title>
+        <link rel="stylesheet" href="home.component.scss">
+    </head>
+    <body>
+        <header>
+            <div class="searchBar">
+                <form action="search.html">
+                    <input class = "search_text" type="search" name="search"/>
+                    <button mat-raised-button routerLink="users">Search</button>
+                </form>
+            </div>
+        </header>
+        <main>
 
-<h1 style="margin-top: 15px;">All Post</h1>
-<app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
-</app-all-blog-entries>
+                <h1 class = "welcome">Welcome to TheDocs!</h1>
+                <p>These website is designed to help computer science students in CSUF.</p>
+                <ol>Here is a list of all the features that are currently working:
+                    <li>The logo in the top left corner</li>
+                    <li>The links for all of the buttons in the Navigation bar</li>
+                    <li>The Log in button in the top right corner</li>
+                    <li>The homepage itself is functional</li>
+                    <li>The log in page is now functional</li>
+                    <li>The create account page is now functional</li>
+                </ol>
+
+                <h1 class="posts" style="margin-top: 15px;">All Post
+                <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
+                </app-all-blog-entries>
+            </h1>
+        </main>
+        <footer>
+        <h4>Copyright Software Programming Group<br>
+            This website was intended for the use of CSUF students.</h4>
+        </footer>
+
+        <video id="videoBG" poster="poster.jpg" autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </body>
+</html>

@@ -9,4 +9,8 @@
 .home-link:hover {
   cursor: pointer;
 }
+mat-toolbar {
+  position: sticky;
+  top:0;
+}
 
