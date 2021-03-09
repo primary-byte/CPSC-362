@@ -1,15 +1,48 @@
-        <form [formGroup]="form" (ngSubmit)="update()">
-            <div class="taco">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TheDocs | Your Account</title>
+    <link rel="stylesheet" href="update-user-profile.component.scss">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="user_posts">
+            <div *ngIf="(user$ | async) as user" class="main-div">
+                <mat-card class="card">
+                    <mat-card-header>
+                        <div mat-card-avatar>
+                            <img src="{{origin}}/api/users/profile-image/{{user.profileImage}}" class="header-image">
+                        </div>
+                        <mat-card-title>{{user.name}}</mat-card-title>
+                        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>Username: {{user.username}}</p>
+                        <p>Role: {{user.role}}</p>
+                        <h2>Blog Entries of {{user.username}}</h2>
+                        <app-all-blog-entries [blogEntries] ="(blogEntries$ | async)" (paginate)="onPaginateChange($event)"></app-all-blog-entries>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <!-- <div class="taco">
+            <form [formGroup]="form" (ngSubmit)="update()">
+
                 <mat-card class="container">
-                    <div style="width: 40%;">
+                    <div class="profile_pic">
                         <mat-card>
                             <mat-card-content>
-                                <img *ngIf="form.get('profileImage').value" src="{{origin}}/api/users/profile-image/{{form.get('profileImage').value}}">
-                            <ul>
-                                <li>
-                                    <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-                                </li>
-                            </ul>                    
+                                <img *ngIf="form.get('profileImage').value"
+                                    src="{{origin}}/api/users/profile-image/{{form.get('profileImage').value}}">
+                                <ul>
+                                    <li>
+                                        <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                                    </li>
+                                </ul>
                             </mat-card-content>
                             <mat-card-actions>
                                 <button mat-button color="warn" (click)="onClick()">
@@ -17,24 +50,35 @@
                                 </button>
                             </mat-card-actions>
                         </mat-card>
-                        <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*" style="display:none;">
+                        <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*"
+                            style="display:none;">
                     </div>
-                    <div class="container" style="width: 40%;">
+                    <div class="container">
                         <mat-form-field>
                             <input matInput placeholder="ID" formControlName="id">
                         </mat-form-field>
-        
+
                         <mat-form-field>
                             <input matInput placeholder="Name" formControlName="name">
                         </mat-form-field>
-        
+
                         <mat-form-field>
                             <input matInput placeholder="Username" formControlName="username">
                         </mat-form-field>
                     </div>
-        
-                    <button mat-flat-button color="primary" [disabled]="!form.valid" type="submit">Update Profile</button>
-        
+
+                    <button mat-flat-button color="primary" [disabled]="!form.valid" type="submit">Update
+                        Profile</button>
+
                 </mat-card>
-            </div>
-        </form>
+
+            </form>
+        </div> -->
+    </main>
+    <footer>
+        <h4>Copyright Software Programming Group<br>
+            This website was intended for the use of CSUF students.</h4>
+    </footer>
+</body>
+
+</html>

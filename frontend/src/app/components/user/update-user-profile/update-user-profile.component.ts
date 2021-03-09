@@ -4,10 +4,14 @@ import { AuthenticationService } from 'src/app/services/authentication-service/a
 import { UserService } from 'src/app/services/user-service/user.service';
 import { switchMap, tap, map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from 'src/app/model/user.interface';
 import { WINDOW } from 'src/app/window-token';
 import { Inject } from '@angular/core';
+import { BlogEntriesPageable } from 'src/app/model/blog-entry.interface';
+import { BlogService } from 'src/app/services/blog-service/blog.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
 export interface File {
   data: any;
@@ -34,10 +38,24 @@ export class UpdateUserProfileComponent implements OnInit {
 
   origin = this.window.location.origin;
 
+  private userId$: Observable<number> = this.activatedRoute.params.pipe(
+    map((params: Params) => parseInt(params['id']))
+  )
+
+  user$: Observable<User> = this.userId$.pipe(
+    switchMap((userId: number) => this.userService.findOne(userId))
+  )
+
+  blogEntries$: Observable<BlogEntriesPageable> = this.userId$.pipe(
+    switchMap((userId: number) => this.blogService.indexByUser(userId, 1, 10))
+  )
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private userService: UserService,
+    private blogService: BlogService,
+    private activatedRoute: ActivatedRoute,
     @Inject(WINDOW) private window: Window
   ) { }
 
@@ -106,4 +124,9 @@ export class UpdateUserProfileComponent implements OnInit {
     this.userService.updateOne(this.form.getRawValue()).subscribe();
   }
 
+  onPaginateChange(event: PageEvent) {
+    return this.userId$.pipe(
+      tap((userId: number) => this.blogEntries$ = this.blogService.indexByUser(userId, event.pageIndex, event.pageSize))
+    ).subscribe();
+  }
 }
