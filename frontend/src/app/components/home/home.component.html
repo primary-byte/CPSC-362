@@ -33,12 +33,12 @@
             <h1 class="welcome">Welcome to TheDocs!</h1>
             <p>These website is designed to help computer science students in CSUF.</p>
             <ol>Here is a list of all the features that are currently working:
-                <li>The logo in the top left corner</li>
-                <li>The links for all of the buttons in the Navigation bar</li>
-                <li>The Log in button in the top right corner</li>
-                <li>The homepage itself is functional</li>
-                <li>The log in page is now functional</li>
-                <li>The create account page is now functional</li>
+                <li>The toolbar at the top of everypage</li>
+                <li>The search button leads to all posts avaiable</li>
+                <li>You can update your account with a profile picture, full name, and username</li>
+                <li>You are able to log into your account with your email and password</li>
+                <li>You can register an account using your name, username, password, and email</li>
+                <li>You can create a post by uploading an image with a title, commitments, and your name</li>
             </ol>
 
             <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">

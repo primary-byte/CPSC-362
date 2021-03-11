@@ -1,7 +1,6 @@
 .taco {
-    background: linear-gradient(180deg, #525f7fcb 40%, #f8f9fe83 80%);
-}
-body {
+    background-image: radial-gradient( circle farthest-corner at 1.5% 1.4%,  rgba(159, 226, 255, 0.541) 0%, rgba(255, 177, 219, 0.616) 100.2% );}
+body::after {
     display:flex;
     flex-direction: column;
     grid-template-rows: auto auto auto;
