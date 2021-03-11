@@ -1,6 +1,6 @@
 .taco {
     background-image: radial-gradient( circle farthest-corner at 1.5% 1.4%,  rgba(159, 226, 255, 0.541) 0%, rgba(255, 177, 219, 0.616) 100.2% );}
-body::after {
+body {
     display:flex;
     flex-direction: column;
     grid-template-rows: auto auto auto;
@@ -51,6 +51,13 @@ main {
     font-size: 3rem;
     align-self: center;
     text-align: center;
+}
+.words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
 }
 footer {
     grid-row: 3;

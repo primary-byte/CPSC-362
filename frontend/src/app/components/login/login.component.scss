@@ -1,5 +1,9 @@
 
 //  code added from Nathan's login page
+html, body {
+    height: 100%;
+    width: 100%;
+}
 body {
     display: grid;
     margin: 0px;
@@ -8,7 +12,6 @@ body {
 }
 header {
     grid-row: 1;
-    padding: 50px;
 }
 main {
     grid-row: 2;

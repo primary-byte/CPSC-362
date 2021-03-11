@@ -29,8 +29,8 @@
             </div>
         </header>
         <main>
-
             <h1 class="welcome">Welcome to TheDocs!</h1>
+            <div class="words">
             <p>These website is designed to help computer science students in CSUF.</p>
             <ol>Here is a list of all the features that are currently working:
                 <li>The toolbar at the top of everypage</li>
@@ -40,7 +40,7 @@
                 <li>You can register an account using your name, username, password, and email</li>
                 <li>You can create a post by uploading an image with a title, commitments, and your name</li>
             </ol>
-
+            </div>
             <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
             </app-all-blog-entries>
         </main>
