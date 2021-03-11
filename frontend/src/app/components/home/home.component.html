@@ -11,9 +11,13 @@
         <!-- End of meta section-->
         <title>TheDocs | Homepage</title>
         <link rel="stylesheet" href="home.component.scss">
+        <link rel="videoBG" href="https://github.com/primary-byte/CPSC-362/blob/master/frontend/src/assets/video.mp4">
     </head>
 
     <body>
+        <video id="videoBG" autoplay muted loop>
+            <source src="scifitunnel01.mp4" type="video/mp4">
+        </video>
         <header>
             <div class="searchBar">
                 <form action="search.html">
@@ -35,20 +39,18 @@
                 <li>The create account page is now functional</li>
             </ol>
 
-            <div class="posts" style="margin-top: 15px;">
-                <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
-                </app-all-blog-entries>
-            </div>
+            <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
+            </app-all-blog-entries>
         </main>
         <footer>
             <h4>Copyright Software Programming Group<br>
                 This website was intended for the use of CSUF students.</h4>
         </footer>
 
-        <video id="videoBG" poster="poster.jpg" autoplay muted loop>
-            <source src="frontend\src\app\components\home\video.mp4" type="video/mp4">
-        </video>
     </body>
+
 </div>
 
 </html>
+
+

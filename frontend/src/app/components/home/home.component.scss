@@ -1,27 +1,9 @@
-*, **, *::before, *::after {
-    box-sizing: border-box;
-    
-}
-html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    height: auto;
-}
 .taco {
     background: linear-gradient(180deg, #525f7fcb 40%, #f8f9fe83 80%);
 }
-.posts {
-    height: 800px;
-    width: 100%;
-    display: flex;
-}
 body {
-    height: auto;
-    display:grid;
+    display:flex;
+    flex-direction: column;
     grid-template-rows: auto auto auto;
     margin: 0px;
     color: whitesmoke;
@@ -87,34 +69,7 @@ h4 {
     font-size: medium;
     font-weight: bold;
 }
-.posts {
-    display: block;
-    justify-content: left;
-    align-content: end;
-}
 #videoBG {
     position: fixed;
     z-index: -1;
-}
-
-@media (min-aspect-ratio: 16/9) {
-    #videoBG {
-        width: 100%;
-        height: auto;
-    }
-}
-@media (max-aspect-ratio: 16/9) {
-    #videoBG {
-        width: auto;
-        height: 100%;
-    }
-}
-@media (max-width:767px) {
-    #videoBG {
-        display: none;
-    }
-    body {
-        background: url('poster.jpg');
-        background-size: cover;
-    }
 }
