@@ -1,20 +1,20 @@
 
 //  code added from Nathan's login page
-html [lang="en"]{
-    height: 100%;
-}
-
 body {
     display: grid;
     margin: 0px;
     grid-template-rows: auto 1fr auto;
-    background-image: linear-gradient(180deg, #525f7f 40%, #f8f9fe 80%);
+    background-image: linear-gradient(180deg, #525f7f 40%, #ffffff 80%);
+}
+header {
+    grid-row: 1;
 }
 main {
     grid-row: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px;
 }
 .container {
     display: flex;
@@ -48,6 +48,7 @@ footer {
     display: flex;
     justify-content: center;
     align-self: center;
+    padding: 20px;
 }
 .plain {
     text-decoration: none;
