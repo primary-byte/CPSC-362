@@ -9,21 +9,20 @@ html {
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-html, body {
-    width: 100%;
-    height: 100%;
+    height: auto;
 }
 .taco {
     background: linear-gradient(180deg, #525f7fcb 40%, #f8f9fe83 80%);
 }
 .posts {
+    height: 800px;
+    width: 100%;
     display: flex;
-
 }
 body {
+    height: auto;
     display:grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto;
     margin: 0px;
     color: whitesmoke;
 }

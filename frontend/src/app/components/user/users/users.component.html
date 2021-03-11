@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
-<Body>
-<h1 style="margin-top: 15px;">Search Post</h1>
-<app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
-</app-all-blog-entries>
-</Body>
+
+<body>
+    <header>
+        <h3>All Posts</h3>
+    </header>
+    <main>
+        <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
+        </app-all-blog-entries>
+    </main>
+    <footer>
+        <h4>Copyright Software Programming Group<br>
+            This website was intended for the use of CSUF students.</h4>
+    </footer>
+</body>
+
 </html>
