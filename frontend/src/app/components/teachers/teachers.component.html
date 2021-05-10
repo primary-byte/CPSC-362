@@ -1,4 +1,7 @@
 <p>teachers works!</p>
+
+<input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for teachers" size="50"
+class="search">
 <div *ngFor="let teacher of teacherList | searchFilter: searchInput">
     <a routerLink="/teachers/{{teacher.id}}"> Professor {{teacher.name}}</a>
 </div>

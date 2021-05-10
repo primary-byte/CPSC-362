@@ -19,20 +19,18 @@ const routes: Routes = [
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'users', children: 
-  [ { path: '', component: UsersComponent },
-    { path: ':id', component: UserProfileComponent},]},
-  { path: 'update-profile', component: UpdateUserProfileComponent
-    //, canActivate: [AuthGuard] 
-  },
-  { path: 'blog-entries/:id', component: ViewBlogEntryComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'users', component: UsersComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'users/:id', component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'update-profile', component: UpdateUserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'update-profile/:id', component: UpdateUserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'blog-entries/:id', component: ViewBlogEntryComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'create-blog-entry', component: CreateBlogEntryComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'courses', component: CoursesComponent, pathMatch: 'full' },
-  { path: 'courses/:id', component: CourseDetailsComponent },
-  { path: 'teachers', component: TeachersComponent, pathMatch: 'full' },
-  { path: 'teachers/:id', component: TeacherDetailsComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'courses', component: CoursesComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'courses/:id', component: CourseDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'teachers', component: TeachersComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'teachers/:id', component: TeacherDetailsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

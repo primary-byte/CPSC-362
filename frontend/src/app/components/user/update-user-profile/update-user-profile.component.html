@@ -1,21 +1,15 @@
 <head>
     <title>TheDocs | Your Account</title>
-    <link rel="stylesheet" href="update-user-profile.component.scss">
 </head>
-
-<body>
+<div>
     <header>
     </header>
     <div class="wrapper">
         <main>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        This is where the user's posts will display.
-                    </mat-card-title>
-                </mat-card-header>
+            <mat-card *ngIf="(user$ | async) as user">
+                <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
+                </app-all-blog-entries>
             </mat-card>
-
         </main>
         <aside>                
             <mat-card class="container">
@@ -71,4 +65,4 @@
         <h4>Copyright Software Programming Group<br>
             This website was intended for the use of CSUF students.</h4>
     </footer>
-</body>
+</div>

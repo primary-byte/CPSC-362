@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.loginForm.value).pipe(
-      map(token => this.router.navigate(['admin']))
+      map(token => this.router.navigate(['home']))
     ).subscribe()
     
   }

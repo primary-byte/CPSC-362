@@ -37,7 +37,7 @@ import { TeacherDetailsComponent } from './components/teacher-details/teacher-de
 import { TeacherFilterPipe } from './components/teachers/teacherFilter.pipe';
 import { TagsComponent } from './components/user/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { SortChipsComponent } from './components/courses/sort-chips/sort-chips.component';
 
 
 @NgModule({
@@ -58,7 +58,8 @@ import { MatChipsModule } from '@angular/material/chips';
     TeacherDetailsComponent,
     CourseFilterPipe,
     TeacherFilterPipe,
-    TagsComponent
+    TagsComponent,
+    SortChipsComponent
   ],
   imports: [
     BrowserModule,

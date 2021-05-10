@@ -1,6 +1,9 @@
+import { UserService } from './services/user-service/user.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AuthenticationService } from './services/authentication-service/authentication.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +12,12 @@ import { AuthenticationService } from './services/authentication-service/authent
 })
 export class AppComponent {
   title = 'frontend';
-
-  constructor(private router: Router, private authService: AuthenticationService) {}
+  
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService) {}
 
   navigateTo(value) {
     this.router.navigate(['../', value]);

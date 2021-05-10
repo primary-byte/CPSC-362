@@ -10,7 +10,7 @@ import { WINDOW } from 'src/app/window-token';
 import { Inject } from '@angular/core';
 import { BlogEntriesPageable } from 'src/app/model/blog-entry.interface';
 import { BlogService } from 'src/app/services/blog-service/blog.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 
 export interface File {
@@ -26,6 +26,8 @@ export interface File {
 })
 export class UpdateUserProfileComponent implements OnInit {
 
+
+
   @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;
 
   file: File = {
@@ -35,6 +37,7 @@ export class UpdateUserProfileComponent implements OnInit {
   };
 
   form: FormGroup;
+  pageEvent: PageEvent;
 
   origin = this.window.location.origin;
 
@@ -50,7 +53,9 @@ export class UpdateUserProfileComponent implements OnInit {
     switchMap((userId: number) => this.blogService.indexByUser(userId, 1, 10))
   )
 
-  constructor(
+
+  constructor(   
+    private router: Router,
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private userService: UserService,
@@ -58,6 +63,16 @@ export class UpdateUserProfileComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     @Inject(WINDOW) private window: Window
   ) { }
+
+  // ngOnInit(): void {
+  //   this.userId$.pipe(
+  //     tap((userId: number) => {
+  //       this.router.navigate(['./', userId])
+  //     })
+  //   );
+  // }
+
+
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -129,4 +144,5 @@ export class UpdateUserProfileComponent implements OnInit {
       tap((userId: number) => this.blogEntries$ = this.blogService.indexByUser(userId, event.pageIndex, event.pageSize))
     ).subscribe();
   }
+
 }

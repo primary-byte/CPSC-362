@@ -1,7 +1,8 @@
 <p>
     This definitely works!
 </p>
-<div class="content-box">
+<div class="content-wrapper">
+<main>
     <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for classes" size="50"
     class="search">
     <mat-card *ngFor="let course of courseList | searchFilter: searchInput">
@@ -9,4 +10,10 @@
             <h3>CPSC {{course.number}} - {{course.name}}</h3>
         </a>
     </mat-card>
+</main>
+<aside>
+    <mat-card>
+        <app-sort-chips></app-sort-chips>
+    </mat-card>
+</aside>
 </div>
