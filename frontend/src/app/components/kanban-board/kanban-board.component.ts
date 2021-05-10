@@ -1,8 +1,7 @@
-import { KanbanService } from './../../services/kanban-service/kanban.service';
+import { Category } from './../../model/category.interface';
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Board } from './../../model/board.interface';
-import { Category } from '../../model/category.interface';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -13,40 +12,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class KanbanBoardComponent implements OnInit {
 
-  board: Board;
-  categoryList: Category[] = [];
-  category: Category;
+  board: Board = new Board('Test Board', [
+    new Category('Ideas', [
+      "Some random idea",
+      "This is another random idea",
+      "build an awesome application"
+    ]),
+    new Category('Research', [
+      "Lorem ipsum",
+      "foo",
+      "This was in the 'Research' column"
+    ]),
+    new Category('Todo', [
+      'Get to work',
+      'Pick up groceries',
+      'Go home',
+      'Fall asleep'
+    ]),
+    new Category('Done', [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ])
+  ]);
+
   constructor(
-    private route: ActivatedRoute,
-    private kanbanService: KanbanService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.kanbanService.getBoardById(id)
-      .subscribe(board => {
-        this.board = board;
-      });
-    this.kanbanService.getCategorys()
-      .subscribe(categorys => this.categoryList = categorys)
-  }
-
-  onCreateCategory({ name, tasks }): void {
-    this.kanbanService.createCategory(name,tasks)
-      .subscribe()
-  }
-
-  onCreateTask({ title, description }): void {
-    this.kanbanService.createTask(title, description)
-      .subscribe()
-  }
-  onDeleteCategory(categoryId: string): void {
-    this.kanbanService.deleteCategory(categoryId)
-      .subscribe(() => {
-        this.categoryList = this.categoryList.filter(
-          category => category.id !== categoryId
-        );
-      })
   }
 
   drop(event: CdkDragDrop<string[]>) {

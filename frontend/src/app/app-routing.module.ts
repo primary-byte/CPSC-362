@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'courses/:id', component: CourseDetailsComponent, canActivate: [AuthGuard] },
   { path: 'teachers', component: TeachersComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'teachers/:id', component: TeacherDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'kanban-board', component: KanbanBoardComponent}
+  { path: 'kanban-board', component: KanbanBoardComponent }
 ];
 
 @NgModule({
