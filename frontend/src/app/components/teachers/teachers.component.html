@@ -1,4 +1,4 @@
 <p>teachers works!</p>
-<div *ngFor="let teacher of teacherList | searchFilter: course.number">
+<div *ngFor="let teacher of teacherList | searchFilter: searchInput">
     <a routerLink="/teachers/{{teacher.id}}"> Professor {{teacher.name}}</a>
 </div>

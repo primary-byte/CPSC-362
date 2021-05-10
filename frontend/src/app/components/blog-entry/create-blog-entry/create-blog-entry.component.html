@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-
 <head>
     <title> TheDocs | Create Post</title>
-    <link rel="stylesheet" href="create-blog-entry.component.scss">
 </head>
 
 <body>
@@ -13,7 +9,6 @@
         <form [formGroup]="form">
             <div class="plant">
                 <mat-card class="container">
-
                     <div style="width: 80%;">
                         <mat-card>
                             <mat-card-content>
@@ -34,21 +29,16 @@
                         <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*"
                             style="display: none;">
                     </div>
-
                     <div class="container" style="width:80%;">
-
                         <mat-form-field>
                             <input matInput placeholder="Id" formControlName="id">
                         </mat-form-field>
-
                         <mat-form-field>
                             <input matInput placeholder="Title" formControlName="title">
                         </mat-form-field>
-
                         <mat-form-field>
                             <input matInput placeholder="Description" formControlName="description">
                         </mat-form-field>
-
                         <div style="display: flex; width: 100%;">
                             <mat-form-field style="width: 45%;">
                                 <textarea matInput rows="15" placeholder="Enter Markdown...." class="variable-textarea"
@@ -58,8 +48,6 @@
                                 [data]="form.get('body').value"></markdown>
                         </div>
                     </div>
-
-
                     <button mat-flat-button color="primary" [disabled]="!form.valid" type="submit" (click)="post()">Add
                         Blog
                         Entry</button>
@@ -72,5 +60,3 @@
             This website is intended for CSUF students to use</h4>
     </footer>
 </body>
-
-</html>

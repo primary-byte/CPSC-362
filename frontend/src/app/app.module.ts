@@ -1,3 +1,4 @@
+import { CourseFilterPipe } from './components/courses/courseFilter.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -33,9 +34,10 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { TeacherDetailsComponent } from './components/teacher-details/teacher-details.component';
-import { FilterPipe } from './components/teachers/filter.pipe';
+import { TeacherFilterPipe } from './components/teachers/teacherFilter.pipe';
 import { TagsComponent } from './components/user/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
+
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { MatChipsModule } from '@angular/material/chips';
     CourseDetailsComponent,
     TeachersComponent,
     TeacherDetailsComponent,
-    FilterPipe,
+    CourseFilterPipe,
+    TeacherFilterPipe,
     TagsComponent
   ],
   imports: [

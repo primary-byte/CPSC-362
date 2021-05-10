@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-
+  public searchInput: string;
   courseList: Course[] = [];
 
   constructor(private courseService: CourseService) { }

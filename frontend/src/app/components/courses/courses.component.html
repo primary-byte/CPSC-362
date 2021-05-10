@@ -2,9 +2,11 @@
     This definitely works!
 </p>
 <div class="content-box">
-    <div *ngFor="let course of courseList">
-        <a  routerLink="/courses/{{course.id}}">
+    <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for classes" size="50"
+    class="search">
+    <mat-card *ngFor="let course of courseList | searchFilter: searchInput">
+        <a routerLink="/courses/{{course.id}}">
             <h3>CPSC {{course.number}} - {{course.name}}</h3>
         </a>
-    </div>
+    </mat-card>
 </div>

@@ -1,4 +1,3 @@
-import { FilterPipe } from './filter.pipe';
 import { TeacherService } from './../../services/teacher-service/teacher.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from './../../model/course.interface';
@@ -13,6 +12,7 @@ import { Teacher } from './../../model/teacher.interface';
 })
 export class TeachersComponent implements OnInit {
 
+  public searchInput: string;
   course: Course;
   teacherList: Teacher[] = [];
 
