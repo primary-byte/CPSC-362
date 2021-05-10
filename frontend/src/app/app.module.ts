@@ -38,6 +38,8 @@ import { TeacherFilterPipe } from './components/teachers/teacherFilter.pipe';
 import { TagsComponent } from './components/user/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { SortChipsComponent } from './components/courses/sort-chips/sort-chips.component';
+import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { SortChipsComponent } from './components/courses/sort-chips/sort-chips.c
     CourseFilterPipe,
     TeacherFilterPipe,
     TagsComponent,
-    SortChipsComponent
+    SortChipsComponent,
+    KanbanBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import { SortChipsComponent } from './components/courses/sort-chips/sort-chips.c
     MatButtonModule,
     MatInputModule,
     MatChipsModule,
+    DragDropModule,
 
     MatSelectModule,
     MatTableModule,

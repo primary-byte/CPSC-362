@@ -17,6 +17,6 @@ export class SortChipsComponent implements OnInit {
   }
 
   toggleSelection(chip: MatChip) {
-    chip.toggleSelected(true);
+    chip.toggleSelected();
  }
 }

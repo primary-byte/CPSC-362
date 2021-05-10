@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'CourseChipFilter' })
+@Pipe({ name: 'courseChipFilter' })
 export class CourseChipFilter implements PipeTransform {
 
     transform(items: any[], searchChip: boolean): any[] {

@@ -2,15 +2,17 @@
   <mat-toolbar-row>
     <span routerLink="/home" class="home-link">Home</span>
     <div class = "baseball">
-      <button mat-flat-button routerLink="courses">Classes</button>
-      <button mat-flat-button routerLink="teachers">Teachers</button>
-      <button mat-flat-button routerLink="users">Thoughts</button>
-      <button mat-flat-button routerLink="create-blog-entry">Create Post</button>
+      <button mat-flat-button routerLink="/courses">Classes</button>
+      <button mat-flat-button routerLink="/teachers">Teachers</button>
+      <button mat-flat-button routerLink="/kanban-board">Kanban</button>
+      <button mat-flat-button routerLink="/users">Thoughts</button>
+      <button mat-flat-button routerLink="/create-blog-entry">Create Post</button>
+
     </div>
     <mat-form-field name="loginRegisterDropdown">
       <mat-label>Login</mat-label>
       <mat-select>
-        <mat-option (click)="navigateTo('update-profile')">Your account</mat-option>
+        <mat-option routerLink="/update-profile/{{user$}}">Your account</mat-option>
         <mat-option (click)="navigateTo('login')">Login</mat-option>
         <mat-option (click)="navigateTo('register')">Register</mat-option>
         <mat-option (click)="logout()">Logout</mat-option>
