@@ -17,7 +17,7 @@ export class AppComponent {
   title = 'frontend';
   
   userId$: Observable<number> = this.activatedRoute.params.pipe(
-    map((params: Params) => parseInt(params['id']))
+    map((params: Params) => parseInt(params[Number('userId')]))
   )
 
   user$: Observable<User> = this.userId$.pipe(
@@ -37,6 +37,4 @@ export class AppComponent {
   logout() {
     this.authService.logout();
   }
-
-  
 }
