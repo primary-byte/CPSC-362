@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { join } from 'path';
+import { CourseModule } from './course/course.module';
 
 @Module({
   imports: [
@@ -23,7 +24,8 @@ import { join } from 'path';
     }),
     UserModule,
     AuthModule,
-    BlogModule
+    BlogModule,
+    CourseModule
   ],
   controllers: [AppController],
   providers: [AppService],
