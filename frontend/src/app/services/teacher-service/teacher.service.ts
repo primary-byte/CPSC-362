@@ -1,7 +1,7 @@
+import { Teacher } from './../../model/teacher.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Course } from '../../model/course.interface';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -12,18 +12,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class TeacherService {
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('/api/courses');
+  getTeachers(): Observable<Teacher[]> {
+    return this.http.get<Teacher[]>('/api/teachers');
   }
-
-  getCourseById(id: string): Observable<Course> {
-    return this.http.get<Course>(`/api/courses/${id}`);
+  getTeacherById(id: string): Observable<Teacher> {
+    return this.http.get<Teacher>(`/api/teachers/${id}`);
   }
 
 }

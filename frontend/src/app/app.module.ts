@@ -32,6 +32,10 @@ import { WINDOW_PROVIDERS } from './window-token';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
+import { TeacherDetailsComponent } from './components/teacher-details/teacher-details.component';
+import { FilterPipe } from './components/teachers/filter.pipe';
+import { TagsComponent } from './components/user/tags/tags.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -48,7 +52,10 @@ import { TeachersComponent } from './components/teachers/teachers.component';
     ViewBlogEntryComponent,
     CoursesComponent,
     CourseDetailsComponent,
-    TeachersComponent
+    TeachersComponent,
+    TeacherDetailsComponent,
+    FilterPipe,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +68,7 @@ import { TeachersComponent } from './components/teachers/teachers.component';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    MatChipsModule,
 
     MatSelectModule,
     MatTableModule,

@@ -1,11 +1,9 @@
-.taco {
-    background-image: radial-gradient( circle farthest-corner at 1.5% 1.4%,  rgba(159, 226, 255, 0.541) 0%, rgba(255, 177, 219, 0.616) 100.2% );}
 body {
     display:flex;
     flex-direction: column;
     grid-template-rows: auto auto auto;
     margin: 0px;
-    color: whitesmoke;
+    background-image: linear-gradient(180deg, #525f7f 40%, #ffffff 80%);
 }
 
 header {
@@ -74,9 +72,4 @@ h4 {
     text-align: center;
     font-size: medium;
     font-weight: bold;
-}
-#videoBG {
-    display: flex;
-    position: fixed;
-    z-index: -1;
 }
