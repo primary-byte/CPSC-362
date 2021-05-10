@@ -29,6 +29,10 @@ import { AllBlogEntriesComponent } from './components/blog-entry/all-blog-entrie
 import { CreateBlogEntryComponent } from './components/blog-entry/create-blog-entry/create-blog-entry.component';
 import { ViewBlogEntryComponent } from './components/blog-entry/view-blog-entry/view-blog-entry.component';
 import { WINDOW_PROVIDERS } from './window-token';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { WINDOW_PROVIDERS } from './window-token';
     HomeComponent,
     AllBlogEntriesComponent,
     CreateBlogEntryComponent,
-    ViewBlogEntryComponent
+    ViewBlogEntryComponent,
+    CoursesComponent,
+    CourseDetailsComponent,
+    TeachersComponent
   ],
   imports: [
     BrowserModule,

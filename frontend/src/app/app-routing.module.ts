@@ -1,3 +1,5 @@
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { CoursesComponent } from './components/courses/courses.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -12,54 +14,19 @@ import { ViewBlogEntryComponent } from './components/blog-entry/view-blog-entry/
 
 
 const routes: Routes = [
-  {
-    path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'users',
-    children: [
-      {
-        path: '',
-        component: UsersComponent
-      },
-      {
-        path: ':id',
-        component: UserProfileComponent
-      },
-    ]
-  },
-  {
-    path: 'update-profile',
-    component: UpdateUserProfileComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'blog-entries/:id',
-    component: ViewBlogEntryComponent
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'create-blog-entry',
-    component: CreateBlogEntryComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'users', children: 
+  [ { path: '', component: UsersComponent },
+    { path: ':id', component: UserProfileComponent},]},
+  { path: 'update-profile', component: UpdateUserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'blog-entries/:id', component: ViewBlogEntryComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'create-blog-entry', component: CreateBlogEntryComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'courses', component: CoursesComponent, pathMatch: 'full' },
+  { path: 'courses/:id', component: CourseDetailsComponent }
 ];
 
 @NgModule({

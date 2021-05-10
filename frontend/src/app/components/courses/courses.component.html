@@ -1,0 +1,10 @@
+<p>
+    This definitely works!
+</p>
+<div class="content-box">
+    <div *ngFor="let course of courseList">
+        <a  routerLink="/courses/{{course.id}}">
+            <h3>CPSC {{course.id}} - {{course.name}}</h3>
+        </a>
+    </div>
+</div>
