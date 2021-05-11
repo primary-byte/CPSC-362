@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 30vh;
+    min-height: 30vh;
     width: 100%;
 }
 .title {
@@ -10,25 +10,28 @@
     position: relative;
     left: -200px;
 }
-.functionality {
-    align-self: center;
-    position: relative;
-}
 .description {
     align-self: center;
     width: 50%;
-    position: relative;
-
 }
+.functionality {
+    align-self: center;
+}
+.f_description {
+    align-self: center;
+    width: 100%;
+}
+
 .content-wrapper {
     display: flex;
+    justify-content: center;
     width: 100%;
-
+    min-height: 40vh;
 }
 main {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 70vh;
     margin: 0px 20px;
 }
 aside {
@@ -49,6 +52,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 10vh;
 }
 
 .functionalitySection {

@@ -1,5 +1,32 @@
+<header>
+    <div class="pageTitle">
+    <div class="title">
+    <h1>Teacher Details</h1>
+    </div>
+    <div class="description">
+    <h3>This is the teacher information that we currently have for {{teacher.name}}.</h3>
+    </div>
+    </div>
+    <div class="back">
+        <a routerLink="/teachers">
+            <button><h6>Back to Teachers</h6></button>
+        </a>
+    </div>
+</header>
 
-<h1>Professor {{teacher.name}}</h1>
+<main>
+    <mat-card>
+        <div class="course">
+            <h1>Professor {{teacher.name}}</h1>
+        </div> 
+        <div class="info">
+            <h3>Classes taught: {{ teacher.taught }} </h3>
+            <h3>Teacher email: {{ teacher.email }} </h3>
+        </div>
+    </mat-card>
+</main>
 
-<h3>Classes taught: {{ teacher.taught }} </h3>
-<h3>Teacher email: {{ teacher.email }} </h3>
+<footer>
+    <h4>Copyright Software Programming Group<br>
+        This website was intended for the use of CSUF students.</h4>
+</footer>

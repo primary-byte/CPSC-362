@@ -1,8 +1,37 @@
-<a routerLink="/courses">
-    <button>Back</button>
-</a>
 
-<h2>CPSC {{course.number}} - {{course.name}}</h2>
-<br>
-<h4>{{course.description}}</h4>
-<h4>Units: {{course.units}}</h4>
+<header>
+    <div class="pageTitle">
+    <div class="title">
+    <h1>Class Details</h1>
+    </div>
+    <div class="description">
+    <h3>This is the class information that we currently have for CPSC {{course.number}}.</h3>
+    </div>
+    </div>
+    <div class="back">
+    <a routerLink="/courses">
+        <button><h6>Back to Classes</h6></button>
+    </a>
+    </div>
+</header>
+
+<main>
+    <mat-card>
+        <div class="course">
+            <h1>CPSC {{course.number}} - {{course.name}}</h1>
+        </div>
+        <div class="summary">
+            <h2>Summary of the course:</h2>
+            <h3>{{course.description}}</h3>
+        </div>
+        <div class="units">
+            <h3>Units: {{course.units}}</h3>        
+        </div>
+    </mat-card>
+
+</main>
+
+<footer>
+    <h4>Copyright Software Programming Group<br>
+        This website was intended for the use of CSUF students.</h4>
+</footer>

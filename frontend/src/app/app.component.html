@@ -11,7 +11,7 @@
     <mat-form-field name="loginRegisterDropdown">
       <mat-label>Login</mat-label>
       <mat-select>
-        <mat-option routerLink="/update-profile/{{ userId }}">Your account</mat-option>
+        <mat-option routerLink="/update-profile/4">Your account</mat-option>
         <mat-option (click)="navigateTo('login')">Login</mat-option>
         <mat-option (click)="navigateTo('register')">Register</mat-option>
         <mat-option (click)="logout()">Logout</mat-option>
@@ -19,4 +19,5 @@
     </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <router-outlet></router-outlet>

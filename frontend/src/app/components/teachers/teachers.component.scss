@@ -14,11 +14,17 @@ mat-card {
     align-self: center;
     margin-bottom: 20px;
 }
+header {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+}
 
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 50vh;
 }
 
 footer {
@@ -26,6 +32,25 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 10vh;
+}
+
+.pageTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 30vh;
+    width: 100%;
+}
+.title {
+    align-self: center;
+    position: relative;
+    left: -200px;
+}
+
+.description {
+    align-self: center;
+    width: 50%;
 }
 
 a {

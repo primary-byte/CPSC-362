@@ -2,55 +2,51 @@ html, body {
   width: 100%;
   height: 100%;
 }
-body {
-  display: grid;
-
-  background: linear-gradient(180deg, #525f7f 40%, #f8f9fe 80%);
-}
-header {
-  grid-row: 1;
-  padding:50px;
-}
 main {
-  grid-row: 2;
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0px;
 }
 footer {
-  grid-row: 3;
   display: flex;
   justify-content: center;
-  align-self: center;
-  padding: 20px;
+  align-items: center;
+  text-align: center;
+  min-height: 10vh;
 }
 mat-form-field{
     width: 100%;
     margin-top: 10px;
 }
-
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
 img {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    height: 200px;
-    width: 200px;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-self: center;
     justify-content: center;
-    flex-direction: center;
-    height: 75%;
-    width: 75%;
+    width: 80%;
+    height: 80vh;
+
 }
 
 .variable-textarea {
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0,0,0,.07);
-    min-height: 420px;
     padding: 8px;
     transition: all 300ms ease-out;
+
   }
   
   .variable-textarea:hover {
@@ -61,8 +57,46 @@ img {
   .variable-binding {
     display: block;
     float: right;
+    min-width: 100px;
   }
-  .plant {
-    display: flex;
+
+  .post_pic{
+    height: 50vh;
+    width: 30vh;
+    position: relative;
+    top: -100px;
+  }
+
+  .upload {
+    align-self: center;
     justify-content: center;
+    min-height: 50vh;
+  }
+  .information {
+    display: flex;
+    flex-direction: column;
+  }
+  .markdown{
+    display: flex;
+    flex-direction: row;
+  }
+
+  button {
+    height: 5em;
+    width: 20em;
+    text-align: center;
+  }
+
+  .upload_button {
+    align-content: flex-end;
+    justify-self: center;
+
+  }
+  .things {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
   }
