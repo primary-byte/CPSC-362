@@ -1,3 +1,4 @@
+import { ScheduleComponent } from './components/schedule/schedule.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'courses/:id', component: CourseDetailsComponent, canActivate: [AuthGuard] },
   { path: 'teachers', component: TeachersComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'teachers/:id', component: TeacherDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'kanban-board', component: KanbanBoardComponent }
+  { path: 'kanban-board', component: KanbanBoardComponent },
+  { path: 'schedule', component: ScheduleComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,36 @@
+
+<div class="week">
+    <h2>Monday</h2> 
+    <h2>&nbsp;&nbsp;Tuesday </h2> 
+    <h2>&nbsp;&nbsp;&nbsp;Wednesday</h2> 
+    <h2>Thursday</h2> 
+    <h2>Friday</h2> 
+    <h2>Saturday</h2> 
+    <h2>Sunday</h2> 
+</div>
+<div class="container">
+<div cdkDropList class="time-list" disabled="true">
+    <div class="example-box" *ngFor="let hour of time">{{hour}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropMonday($event)">
+    <div class="example-box" *ngFor="let activity of monday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropTuesday($event)">
+    <div class="example-box" *ngFor="let activity of tuesday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropWednesday($event)">
+    <div class="example-box" *ngFor="let activity of wednesday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropThursday($event)">
+    <div class="example-box" *ngFor="let activity of thursday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropFriday($event)">
+    <div class="example-box" *ngFor="let activity of friday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropSaturday($event)">
+    <div class="example-box" *ngFor="let activity of saturday" cdkDrag>{{activity}}</div>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="dropSunday($event)">
+    <div class="example-box" *ngFor="let activity of sunday" cdkDrag>{{activity}}</div>
+</div>
+</div>

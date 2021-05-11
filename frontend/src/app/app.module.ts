@@ -42,6 +42,7 @@ import { KanbanBoardComponent } from './components/kanban-board/kanban-board.com
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ThoughtsComponent } from './components/thoughts/thoughts.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { ThoughtsComponent } from './components/thoughts/thoughts.component';
     SortChipsComponent,
     KanbanBoardComponent,
     ThoughtsComponent,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
