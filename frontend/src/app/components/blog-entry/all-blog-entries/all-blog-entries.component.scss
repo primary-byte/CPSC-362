@@ -1,9 +1,5 @@
-.wrapper {
-    display: flex;
-    
-}
 .shell {
-    width: 100%;
+    width: 90%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -12,7 +8,7 @@
 }
 .card {
     align-self: center;
-    width: 50%;
+    width: 80%;
     display: flex;
     margin-top: 10px;
     :hover {
@@ -30,7 +26,7 @@ img {
 }
 
 mat-paginator {
-    width: 50%;
+    width: 80%;
     align-self: center;
     margin-top: 10px;
 }

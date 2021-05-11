@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
-import { MatChip } from '@angular/material/chips';
+import { CourseChipFilter } from './../courseChipFilter.pipe';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { MatChip, MatChipList } from '@angular/material/chips';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-sort-chips',
   templateUrl: './sort-chips.component.html',
-  styleUrls: ['./sort-chips.component.scss']
+  styleUrls: ['./sort-chips.component.scss'],
 })
 export class SortChipsComponent implements OnInit {
 
@@ -20,3 +22,4 @@ export class SortChipsComponent implements OnInit {
     chip.toggleSelected();
  }
 }
+

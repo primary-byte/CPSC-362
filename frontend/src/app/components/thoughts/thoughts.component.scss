@@ -1,0 +1,26 @@
+.content-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+main {
+    width: 80%;
+}
+app-all-blog-entries {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+aside {
+    width: 20%;
+    align-self: center;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

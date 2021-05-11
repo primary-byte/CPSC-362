@@ -1,7 +1,7 @@
 import { CourseService } from './../../services/course-service/course.service';
 import { Course } from './../../model/course.interface';
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
   public searchInput: string;
+  public searchChip: boolean;
   courseList: Course[] = [];
 
   constructor(private courseService: CourseService) { }

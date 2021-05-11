@@ -1,17 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'courseChipFilter' })
-export class CourseChipFilter implements PipeTransform {
 
-    transform(items: any[], searchChip: boolean): any[] {
+export class CourseChipFilter implements PipeTransform {
+    transform(items: any[], searchChip: string): any[] {
         if(!items) {
             return items;
         }
         if (!searchChip) {
             return items;
         }
-        return items.filter(it => {
-            return it.includes(searchChip);
+        searchChip = searchChip.toLocaleLowerCase();
+
+        return items.filter(function(data) {
+            return JSON.stringify(data).toLowerCase().includes(searchChip);
         });
     }
 }

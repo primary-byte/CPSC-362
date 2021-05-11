@@ -2,13 +2,39 @@
     <title> TheDocs | Thoughts </title>
 </head>
 
+<header>
+    <h1>Thoughts</h1>
+    <h3>
+        This is where everyone's own individual posts will 
+        display. On this page, the features of the posts 
+        can include the following:<br>
+        A picture, a title, a description, how many likes the post has, and the person who created the post.
+    </h3>
+</header>
+<div class="content-box">
 <main>
     <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
     </app-all-blog-entries>
 </main>
 
 <aside>
+    <div class="title">
+    <h1>Create a Post</h1>
+    </div>
+    <div class="description">
+    <h3>Share what you're thinking about with everyone else around you!</h3>
+    <h3>If you have a question about something, don't hesitate to ask!</h3>
+    <h3>All you have to do is click the button below!</h3>
+    </div>
+    <div class="create-button">
     <a routerLink="/create-blog-entry">
         <button mat-flat-button>Create A Post</button>
     </a>
+    </div>
 </aside>
+</div>
+
+<footer>
+    <h4>Copyright Software Programming Group<br>
+        This website was intended for the use of CSUF students.</h4>
+</footer>
