@@ -17,13 +17,17 @@ export class AppComponent {
   title = 'frontend';
   
   userId$: Observable<number> = this.activatedRoute.params.pipe(
-    map((params: Params) => parseInt(params[Number('userId')]))
+    map((params: Params) => parseInt(params['id']))
   )
-
   user$: Observable<User> = this.userId$.pipe(
     switchMap((userId: number) => this.userService.findOne(userId))
   )
   
+  userId = this.user$.pipe(
+    map((user: User) => this.user$.toPromise())
+  )
+
+
   constructor(
     private router: Router,
     private authService: AuthenticationService,

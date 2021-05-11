@@ -14,7 +14,8 @@
                     <h1>{{blogEntry.title}}</h1>
                     <h2>{{blogEntry.description}}</h2>
                     <h3>Author: {{blogEntry.author.name}}</h3>
-                    <button (click)="like(blogEntry)">Like</button>
+                    <h3>Likes: {{ blogEntry.likes }}</h3>
+                    <button (click)="like(blogEntry.author.id)">Like</button>
                     <a routerLink="../../users/{{blogEntry.author.id}}">Go to author profile</a>
                 </div>
             </div>

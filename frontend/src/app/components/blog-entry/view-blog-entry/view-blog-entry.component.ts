@@ -33,9 +33,9 @@ export class ViewBlogEntryComponent {
     private http: HttpClient,
     @Inject(WINDOW) private window: Window) { }
 
-    like(blogEntry: BlogEntry): Observable<BlogEntry> {
-      blogEntry.likes = blogEntry.likes+1;
-      return this.http.put<BlogEntry>('/api/blog-entries/', blogEntry);
+    like(blogEntry: BlogEntry): void {
+      this.blogService.like(blogEntry)
+        .subscribe();
     }
 
 
