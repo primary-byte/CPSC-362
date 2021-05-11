@@ -43,7 +43,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ThoughtsComponent } from './components/thoughts/thoughts.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -82,6 +82,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     MatInputModule,
     MatChipsModule,
     DragDropModule,
+    MatExpansionModule,
 
     MatDialogModule,
     MatSelectModule,

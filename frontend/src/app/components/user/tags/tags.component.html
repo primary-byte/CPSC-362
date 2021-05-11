@@ -1,31 +1,57 @@
-<p><b>Beginner Skill Level: </b><br>
-    If you are just starting to learn about any of this or have less than
-    one year of experience with any of these let others help you!
-</p>
-<mat-chip-list selectable multiple>
-    <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
-        {{option}}
-    </mat-chip>
-</mat-chip-list>
-
-<p><b>Intermediate Skill Level:</b><br>
-    If you have 1 to 3 years of experience with working with any of these,
-    let people know!
-</p>
-
-<mat-chip-list selectable multiple>
-    <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
-        {{option}}
-    </mat-chip>
-</mat-chip-list>
-
-<p><b>Expert Skill Level:</b><br>
-    If you are an expert and know all about any of these skills,
-    answer some questions that other people have!
-</p>
-<mat-chip-list selectable multiple>
-    <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
-        {{option}}
-    </mat-chip>
-</mat-chip-list>
-
+<div class="skills">
+    <div class="beginner">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Beginner Skill Level:
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+            If you are just starting to learn about any of this or have less than
+            one year of experience with any of these let others help you!
+        </p>
+        <mat-chip-list selectable multiple>
+            <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
+                {{option}}
+            </mat-chip>
+        </mat-chip-list>        
+    </mat-expansion-panel>
+    </div>
+    <div class="beginner">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Intermediate Skill Level:
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+            If you have 1 to 3 years of experience with working with any of these,
+            let people know!
+        </p>
+        <br>
+        <mat-chip-list selectable multiple>
+            <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
+                {{option}}
+            </mat-chip>
+        </mat-chip-list>        
+    </mat-expansion-panel>
+    </div>
+    <div class="beginner">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Expert Skill Level:
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+            If you are an expert and know all about any of these skills,
+            answer some questions that other people have!
+        </p>        
+        <mat-chip-list selectable multiple>
+            <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)">
+                {{option}}
+            </mat-chip>
+        </mat-chip-list>        
+    </mat-expansion-panel>
+    </div>
+</div>

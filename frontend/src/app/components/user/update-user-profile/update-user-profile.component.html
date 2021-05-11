@@ -51,18 +51,33 @@
                     </div>
                 </form>
             </mat-card>
-            <mat-card class="container">
-                <mat-card-header>
-                    <mat-card-title>
-                        <app-tags></app-tags>
-                        <router-outlet></router-outlet>
-                    </mat-card-title>
-                </mat-card-header>
-            </mat-card>
+
         </aside>
     </div>
+
     <footer>
+    <div class="skill-level">
+        <div class="pageTitle">
+            <div class="title">
+                <h1>Skills</h1>
+            </div>
+            <div class="description">
+                <h3>Here are a couple of skills that you should consider 
+                    when trying to learn computer science. This list is
+                    not complete and is based on recalling information
+                    while self-teaching. If you do not see some skills that
+                    you might have, please let us know!
+                </h3>
+            </div>
+        </div>
+        <div class="tags">
+        <app-tags></app-tags>
+        <router-outlet></router-outlet>
+        </div>
+        <div class="footer">
         <h4>Copyright Software Programming Group<br>
             This website was intended for the use of CSUF students.</h4>
+        </div>
+    </div>
     </footer>
 </div>
