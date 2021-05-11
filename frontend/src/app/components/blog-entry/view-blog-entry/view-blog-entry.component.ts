@@ -6,6 +6,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { BlogEntry } from 'src/app/model/blog-entry.interface';
 import { BlogService } from 'src/app/services/blog-service/blog.service';
 import { WINDOW } from 'src/app/window-token';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-blog-entry',
@@ -29,7 +30,13 @@ export class ViewBlogEntryComponent {
   constructor(
     private activatedRoute: ActivatedRoute, 
     private blogService: BlogService,
+    private http: HttpClient,
     @Inject(WINDOW) private window: Window) { }
+
+    like(blogEntry: BlogEntry): Observable<BlogEntry> {
+      blogEntry.likes = blogEntry.likes+1;
+      return this.http.put<BlogEntry>('/api/blog-entries/', blogEntry);
+    }
 
 
 }
