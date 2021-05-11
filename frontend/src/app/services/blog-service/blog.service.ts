@@ -45,7 +45,7 @@ export class BlogService {
 
   like(blogEntry: BlogEntry): Observable<BlogEntry> {
     blogEntry.likes = blogEntry.likes+1;
-    return this.http.post<BlogEntry>('/api/blog-entries/', blogEntry.likes);
+    return this.http.put<BlogEntry>(`/api/blog-entries/${blogEntry.id}`, blogEntry.likes);
   }
 
 }

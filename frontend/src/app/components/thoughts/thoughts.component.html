@@ -1,0 +1,14 @@
+<head>
+    <title> TheDocs | Thoughts </title>
+</head>
+
+<main>
+    <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
+    </app-all-blog-entries>
+</main>
+
+<aside>
+    <a routerLink="/create-blog-entry">
+        <button mat-flat-button>Create A Post</button>
+    </a>
+</aside>

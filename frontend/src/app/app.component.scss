@@ -1,11 +1,7 @@
-.home-link:hover {
+span:hover {
   cursor: pointer;
 }
-mat-toolbar {
-  position: sticky;
-  top:0;
-  z-index: 5;
-}
+
 mat-toolbar-row {
   height: 96px;
   display:flex;
@@ -14,8 +10,8 @@ mat-toolbar-row {
 
   padding: 10px 40px;
 }
-.baseball {
-  width: 30%;
+.navigation {
+  width: 40%;
   display: flex;
   justify-content: space-evenly;
 }

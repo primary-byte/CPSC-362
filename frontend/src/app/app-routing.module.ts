@@ -14,13 +14,14 @@ import { UpdateUserProfileComponent } from './components/user/update-user-profil
 import { CreateBlogEntryComponent } from './components/blog-entry/create-blog-entry/create-blog-entry.component';
 import { ViewBlogEntryComponent } from './components/blog-entry/view-blog-entry/view-blog-entry.component';
 import { TeacherDetailsComponent } from './components/teacher-details/teacher-details.component';
+import { ThoughtsComponent } from './components/thoughts/thoughts.component';
 
 
 const routes: Routes = [
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'users', component: UsersComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'thoughts', component: ThoughtsComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'update-profile', component: UpdateUserProfileComponent, canActivate: [AuthGuard] },
   { path: 'update-profile/:id', component: UpdateUserProfileComponent, canActivate: [AuthGuard] },

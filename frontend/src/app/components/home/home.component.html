@@ -5,15 +5,15 @@
     <body>
         <header>
             <h1 class="welcome">Welcome to TheDocs!</h1>
-            <p>These website is designed to help computer science students in CSUF.</p>
-            <ol>Here is a list of all the features that are currently working:
-                <li>The toolbar at the top of everypage</li>
-                <li>The search button leads to all posts avaiable</li>
-                <li>You can update your account with a profile picture, full name, and username</li>
-                <li>You are able to log into your account with your email and password</li>
-                <li>You can register an account using your name, username, password, and email</li>
-                <li>You can create a post by uploading an image with a title, commitments, and your name</li>
-            </ol>
+            <h3>
+                Are you struggling?<br>
+                We can help!
+            </h3>
+            <h3>
+                This website is designed to help computer science students 
+                in California State Unversity of Fullerton.
+            </h3>
+            
         </header>
         <main>
             <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
