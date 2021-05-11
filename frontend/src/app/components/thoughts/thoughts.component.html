@@ -1,8 +1,9 @@
 <head>
     <title> TheDocs | Thoughts </title>
 </head>
-
-<header>
+<div class="content-box">
+<main>
+<div class="thoughtsTitle">
     <h1>Thoughts</h1>
     <h3>
         This is where everyone's own individual posts will 
@@ -10,9 +11,7 @@
         can include the following:<br>
         A picture, a title, a description, how many likes the post has, and the person who created the post.
     </h3>
-</header>
-<div class="content-box">
-<main>
+</div>
     <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
     </app-all-blog-entries>
 </main>
