@@ -26,10 +26,8 @@
 
 }
 main {
-    background-color: grey;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     width: 70%;
     margin: 0px 20px;
 }
@@ -46,10 +44,6 @@ h1 {
     text-transform: uppercase;
 }
 
-h3 {
-    font-size: 1.5em;
-}
-
 footer {
     display: flex;
     justify-content: center;
@@ -62,4 +56,27 @@ footer {
     flex-direction: column;
     justify-content: center;
     width: 100%;
+}
+
+.mat-card {
+    border-radius: 0px;
+}
+
+.search {
+    height: 50px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(21, 142, 182);
+}
+
+a:visited {
+    color: rgb(21, 142, 182);
+}
+
+a:hover {
+    color:rgb(121, 46, 192);
 }

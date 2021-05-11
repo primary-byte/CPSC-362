@@ -12,18 +12,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class KanbanBoardComponent implements OnInit {
 
-  board: Board = new Board('Test Board', [
-    new Category('Ideas', [
+  board: Board = new Board('My Board', [
+    new Category('Backlog', [
       "Some random idea",
       "This is another random idea",
       "build an awesome application"
     ]),
-    new Category('Research', [
+    new Category('To Do', [
       "Lorem ipsum",
       "foo",
       "This was in the 'Research' column"
     ]),
-    new Category('Todo', [
+    new Category('Doing', [
       'Get to work',
       'Pick up groceries',
       'Go home',
@@ -54,5 +54,9 @@ export class KanbanBoardComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+  }
+
+  editTask(task: string) {
+    
   }
 }

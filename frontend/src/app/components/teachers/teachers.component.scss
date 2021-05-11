@@ -1,0 +1,42 @@
+.mat-card {
+    border-radius: 0px;
+}
+
+mat-card {
+    width: 90%;
+    align-self: center;
+}
+
+.search {
+    height: 50px;
+    font-size: 1.5em;
+    width: 92%;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(21, 142, 182);
+}
+
+a:visited {
+    color: rgb(21, 142, 182);
+}
+
+a:hover {
+    color:rgb(121, 46, 192);
+}

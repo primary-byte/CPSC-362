@@ -37,11 +37,23 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
     background: white;
     font-size: 14px;
   }
   
+.example-box:active {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+
 .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: 4px;

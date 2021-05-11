@@ -13,7 +13,6 @@
                 This website is designed to help computer science students 
                 in California State Unversity of Fullerton.
             </h3>
-            
         </header>
         <main>
             <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
@@ -21,7 +20,8 @@
         </main>
         <footer>
             <h4>Copyright Software Programming Group<br>
-                This website was intended for the use of CSUF students.</h4>
+                This website was intended for the use of CSUF students.
+            </h4>
         </footer>
 </body>
 

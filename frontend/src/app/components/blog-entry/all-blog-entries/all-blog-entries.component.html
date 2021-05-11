@@ -1,4 +1,4 @@
-<mat-card class="shell">
+<div class="shell">
     <mat-card *ngFor="let blogEntry of blogEntries?.items" class="card" (click)="navigate(blogEntry.id)">
         <div class="content">
             <div class="blogImage">
@@ -8,7 +8,7 @@
                     <img src="../../../assets/placeholders/placeholder-blog-entry.png">
                 </ng-template>
             </div>
-            <div class="blogInfo" style="margin-left:30px;">
+            <div class="blogInfo" style="margin-left:30px;" >
                 <h2>{{blogEntry.title}}</h2>
                 <p>{{blogEntry.description}}</p>
                 <p>Likes: {{blogEntry.likes}}</p>
@@ -25,4 +25,4 @@
     showFirstLastButtons>
     </mat-paginator>
 
-</mat-card>
+</div>

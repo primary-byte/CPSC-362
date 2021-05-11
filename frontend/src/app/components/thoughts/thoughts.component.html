@@ -4,16 +4,25 @@
 <div class="content-box">
 <main>
 <div class="thoughtsTitle">
-    <h1>Thoughts</h1>
+    <div class="title">
+        <h1>Thoughts</h1>        
+    </div>
+    <div class="description">
     <h3>
         This is where everyone's own individual posts will 
         display. On this page, the features of the posts 
         can include the following:<br>
         A picture, a title, a description, how many likes the post has, and the person who created the post.
     </h3>
+    </div>
 </div>
+<div class="all-user-thoughts">
+    <mat-card class="user-thoughts">
+    <h2 class="user-title">All User Thoughts</h2>
     <app-all-blog-entries [blogEntries]="(blogEntries$ | async)" (paginate)="onPaginateChange($event)">
     </app-all-blog-entries>
+    </mat-card>
+</div>
 </main>
 
 <aside>
@@ -27,7 +36,7 @@
     </div>
     <div class="create-button">
     <a routerLink="/create-blog-entry">
-        <button mat-flat-button>Create A Post</button>
+        <button mat-flat-button>Create Post</button>
     </a>
     </div>
 </aside>
